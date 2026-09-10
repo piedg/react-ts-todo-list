@@ -1,15 +1,12 @@
 import { useState } from "react"
-import type { Note } from "../types/Note"
+import { useNotes } from "../hooks/useNotesList"
 
-type AddNoteInputProps = {
-    onAddNote: (note: Note) => void
-}
-
-export function AddNoteInput(props: AddNoteInputProps) {
+export function AddNoteInput() {
     const [newNoteText, setNewNoteText] = useState("")
     const [noteId, setNoteId] = useState(0)
+    const { addNote } = useNotes()
 
-    function AddNote() {
+    function addNewNote() {
         if (!newNoteText.trim()) return
         let date: Date = new Date
 
@@ -17,7 +14,7 @@ export function AddNoteInput(props: AddNoteInputProps) {
         const formattedHour: string = date.getHours() + ":" + date.getMinutes()
         const formattedDateHour: string = formattedDate + ", " + formattedHour
 
-        props.onAddNote({ id: noteId, text: newNoteText, date: formattedDateHour })
+        addNote({ id: noteId, text: newNoteText, date: formattedDateHour })
         setNoteId(noteId + 1)
         setNewNoteText("")
     }
@@ -25,7 +22,7 @@ export function AddNoteInput(props: AddNoteInputProps) {
     return (
         <div>
             <input type='text' placeholder='Nuova nota' value={newNoteText} onChange={(e) => setNewNoteText(e.target.value)} />
-            <button onClick={() => AddNote()}>Aggiungi</button>
+            <button onClick={() => addNewNote()}>Aggiungi</button>
         </div>
     )
 }

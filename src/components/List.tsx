@@ -1,22 +1,19 @@
 import { ListElement } from "./ListElement"
-import type { Note } from "../types/Note"
+import { useNotes } from "../hooks/useNotesList"
 
-type ListProps = {
-    notes: Array<Note>,
-    onDeleteNote: (id: number) => void
-}
-
-export function List(params: ListProps) {
+export function List() {
+    const { removeNote, notes } = useNotes()
 
     return (
-        <ul>
-            {params.notes.map((note, i) => (
-                <ListElement key={i} note={note} onDeleteNote={params.onDeleteNote} />
-            ))}
-        </ul>
+        <>
+            <p>La lista</p>
+            <ul>
+                {notes.map((note, i) => (
+                    <ListElement key={i} note={note} onDeleteNote={removeNote} />
+                ))}
+            </ul>
+        </>
     )
 }
 
-// Context -> custom hook che gestisce stato della lista
-// Data ora creazione [X]
 // Search -> cercare le note per data / contenuto testo
