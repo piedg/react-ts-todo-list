@@ -5,12 +5,12 @@ type ListElementProps = {
     onDeleteNote: (id: number) => void
 }
 
-export function ListElement(params: ListElementProps) {
+export function ListElement({ note, onDeleteNote }: ListElementProps) {
     return (
         <li>
-            <p>{params.note.text}</p>
+            <p>{note.text} - <span>{note.date}</span></p>
             <button>Modifica</button>
-            <button onClick={() => params.onDeleteNote(params.note.id)}>Elimina</button>
+            <button onClick={() => onDeleteNote(note.id)}>Elimina</button>
         </li>
     )
 }

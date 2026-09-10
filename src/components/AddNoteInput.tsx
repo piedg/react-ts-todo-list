@@ -11,7 +11,13 @@ export function AddNoteInput(props: AddNoteInputProps) {
 
     function AddNote() {
         if (!newNoteText.trim()) return
-        props.onAddNote({ id: noteId, text: newNoteText })
+        let date: Date = new Date
+
+        const formattedDate: string = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()
+        const formattedHour: string = date.getHours() + ":" + date.getMinutes()
+        const formattedDateHour: string = formattedDate + ", " + formattedHour
+
+        props.onAddNote({ id: noteId, text: newNoteText, date: formattedDateHour })
         setNoteId(noteId + 1)
         setNewNoteText("")
     }

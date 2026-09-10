@@ -1,5 +1,5 @@
 import { ListElement } from "./ListElement"
-import type { Note } from "../types/Note" 
+import type { Note } from "../types/Note"
 
 type ListProps = {
     notes: Array<Note>,
@@ -16,3 +16,7 @@ export function List(params: ListProps) {
         </ul>
     )
 }
+
+// Context -> custom hook che gestisce stato della lista
+// Data ora creazione [X]
+// Search -> cercare le note per data / contenuto testo
