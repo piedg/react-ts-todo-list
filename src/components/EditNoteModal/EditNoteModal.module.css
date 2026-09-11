@@ -48,7 +48,7 @@
 
 .input:focus {
     outline: none;
-    border-color: #bf4ad9;
+    border-color: #5f5fff;
     box-shadow: 0 0 0 3px rgba(179, 74, 217, 0.15);
 }
 
@@ -68,12 +68,12 @@
 
 .saveButton {
     composes: button;
-    background-color: #6f0198;
+    background-color: #4545e8;
     color: #fff;
 }
 
 .saveButton:hover {
-    background-color: #4b0165;
+    background-color: #5f5fff;
 }
 
 .closeButton {

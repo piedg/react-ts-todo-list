@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import type { Note } from "../../types/Note"
-import styles from './NoteModal.module.css'
+import styles from './EditNoteModal.module.css'
 
 type NoteModalProps = {
     note: Note | null
@@ -8,7 +8,7 @@ type NoteModalProps = {
     onSave: (id: number, newText: string) => void
 }
 
-export function NoteModal({ note, onClose, onSave }: NoteModalProps) {
+export function EditNoteModal({ note, onClose, onSave }: NoteModalProps) {
     const modalRef = useRef<HTMLDialogElement>(null)
     const [text, setText] = useState("")
 

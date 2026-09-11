@@ -1,6 +1,6 @@
 import { NotesProvider } from './context/NotesContext'
-import { AddNoteInput } from './components/AddNoteInput'
-import { List } from './components/List'
+import { AddNoteInput } from './components/AddNoteInput/AddNoteInput'
+import { List } from './components/List/List'
 
 import './App.css'
 

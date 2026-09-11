@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { useNotes } from "../hooks/notes/useNotes"
+import { useNotes } from "../../hooks/notes/useNotes"
+import styles from "./AddNoteInput.module.css"
 
 export function AddNoteInput() {
     const [newNoteText, setNewNoteText] = useState("")
@@ -27,9 +28,9 @@ export function AddNoteInput() {
     }
 
     return (
-        <div>
-            <input type='text' placeholder='Nuova nota' value={newNoteText} onChange={(e) => setNewNoteText(e.target.value)} />
-            <button onClick={() => addNewNote()}>Aggiungi</button>
+        <div className={styles.container}>
+            <input className={styles.input} type='text' placeholder='Nuova nota' value={newNoteText} onChange={(e) => setNewNoteText(e.target.value)} />
+            <button className={styles.addButton} onClick={() => addNewNote()}>Aggiungi</button>
         </div>
     )
 }

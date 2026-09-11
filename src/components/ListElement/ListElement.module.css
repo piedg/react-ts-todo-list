@@ -1,0 +1,62 @@
+.listElement {
+    padding: 20px 0px 20px 0px;
+    border-bottom: 1px solid #fff;
+}
+
+.listElement:first-child {
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-color: #fff;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.text {
+    color: #fff;
+    overflow-wrap: anywhere;
+    margin: 0px 16px 0px 16px;
+    text-align: start;
+}
+
+.date {
+    color: #a3a3a3;
+    flex-shrink: 0;
+}
+
+.button {
+    width: 80px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+.deleteButton {
+    composes: button;
+    background-color: #d00303;
+    border-color: #9a0c0c;
+}
+
+.deleteButton:hover {
+    background-color: #b40000;
+}
+
+.editButton {
+    composes: button;
+    background-color: #4545e8;
+    border-color: #2809a6;
+}
+
+.editButton:hover {
+    background-color: #5f5fff;
+}

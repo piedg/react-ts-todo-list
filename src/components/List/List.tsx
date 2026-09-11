@@ -1,8 +1,9 @@
-import { ListElement } from "./ListElement"
-import { NoteModal } from "./NoteModal/NoteModal"
+import { ListElement } from "../ListElement/ListElement"
+import { EditNoteModal } from "../EditNoteModal/EditNoteModal"
 import { useState } from "react"
-import type { Note } from "../types/Note"
-import { useNotes } from "../hooks/notes/useNotes"
+import type { Note } from "../../types/Note"
+import { useNotes } from "../../hooks/notes/useNotes"
+import styles from "./List.module.css"
 
 export function List() {
     const { removeNote, editNote, notes } = useNotes()
@@ -10,14 +11,14 @@ export function List() {
 
     return (
         <>
-            <NoteModal
+            <EditNoteModal
                 note={editingNote}
                 onClose={() => setEditingNote(null)}
                 onSave={editNote}
             />
 
-            <p>Lista</p>
-            <ul>
+            <h2 className={styles.title}>Lista</h2>
+            <ul className={styles.list}>
                 {notes.map((note) => (
                     <ListElement
                         key={note.id}
