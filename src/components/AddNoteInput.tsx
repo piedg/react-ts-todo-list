@@ -10,8 +10,15 @@ export function AddNoteInput() {
         if (!newNoteText.trim()) return
         let date: Date = new Date
 
-        const formattedDate: string = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()
-        const formattedHour: string = date.getHours() + ":" + date.getMinutes()
+        const day = date.getDate()
+        const month = date.getMonth() + 1
+        const year = date.getFullYear()
+
+        const hours = date.getHours().toString().padStart(2, "0")
+        const minutes = date.getMinutes().toString().padStart(2, "0")
+
+        const formattedDate: string = day + "/" + month + "/" + year
+        const formattedHour: string = hours + ":" + minutes
         const formattedDateHour: string = formattedDate + ", " + formattedHour
 
         addNote({ id: noteId, text: newNoteText, date: formattedDateHour })

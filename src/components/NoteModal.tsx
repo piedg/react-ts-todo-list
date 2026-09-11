@@ -22,13 +22,14 @@ export function NoteModal({ note, onClose, onSave }: NoteModalProps) {
             modalElement.showModal()
         } else {
             modalElement.close()
+            setText("")
         }
 
     }, [isOpen, note])
 
     function saveNote() {
         if (!note) return
-        
+
         onSave(note.id, text)
         onClose()
     }
@@ -44,7 +45,6 @@ export function NoteModal({ note, onClose, onSave }: NoteModalProps) {
             <h3>Modifica Nota</h3>
             <input
                 type="text"
-                placeholder="Testo nota"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
             />
