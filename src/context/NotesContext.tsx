@@ -7,6 +7,7 @@ export const NotesContext = createContext<NotesContextProps | null>(null)
 export type NotesContextProps = {
     addNote: (note: Note) => void,
     removeNote: (id: number) => void,
+    editNote: (id: number, newText: string) => void,
     notes: Note[]
 }
 

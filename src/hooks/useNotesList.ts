@@ -13,7 +13,12 @@ export function useNotesList() {
         setNotes(notes.filter((note) => note.id !== id))
     }
 
-    return { addNote, removeNote, notes }
+    function editNote(id: number, newText: string) {
+        setNotes((prev) => prev.map((note) => note.id === id ? { ...note, text: newText } : note))
+    }
+
+
+    return { addNote, removeNote, editNote, notes }
 }
 
 export function useNotes() {
