@@ -10,6 +10,7 @@ function App() {
       <section id="center">
         <div>
           <h1>My Todo List</h1>
+          <p>Made with React - Typescript</p>
         </div>
         <AddNoteInput />
         <List />

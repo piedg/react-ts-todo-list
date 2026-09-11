@@ -1,5 +1,5 @@
 import { ListElement } from "./ListElement"
-import { NoteModal } from "./NoteModal"
+import { NoteModal } from "./NoteModal/NoteModal"
 import { useState } from "react"
 import type { Note } from "../types/Note"
 import { useNotes } from "../hooks/notes/useNotes"
@@ -16,7 +16,7 @@ export function List() {
                 onSave={editNote}
             />
 
-            <p>La lista</p>
+            <p>Lista</p>
             <ul>
                 {notes.map((note) => (
                     <ListElement

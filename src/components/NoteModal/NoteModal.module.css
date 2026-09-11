@@ -1,0 +1,87 @@
+.modal {
+    border: none;
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    width: min(90vw, 420px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    background-color: var(--bg);
+    color: #1a1a1a;
+}
+
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+.modal[open] {
+    animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    color: white;
+    margin: 0 0 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #bf4ad9;
+    box-shadow: 0 0 0 3px rgba(179, 74, 217, 0.15);
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.button {
+    padding: 0.45rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.saveButton {
+    composes: button;
+    background-color: #6f0198;
+    color: #fff;
+}
+
+.saveButton:hover {
+    background-color: #4b0165;
+}
+
+.closeButton {
+    composes: button;
+    background-color: #eee;
+    color: #333;
+}
+
+.closeButton:hover {
+    background-color: #ddd;
+}

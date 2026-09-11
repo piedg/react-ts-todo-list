@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
-import type { Note } from "../types/Note"
+import type { Note } from "../../types/Note"
+import styles from './NoteModal.module.css'
 
 type NoteModalProps = {
     note: Note | null
@@ -41,15 +42,19 @@ export function NoteModal({ note, onClose, onSave }: NoteModalProps) {
     }
 
     return (
-        <dialog ref={modalRef} className="modal" onKeyDown={handleKeyDown}>
-            <h3>Modifica Nota</h3>
+        <dialog ref={modalRef} className={styles.modal} onKeyDown={handleKeyDown}>
+            <h3 className={styles.title}>Modifica Nota</h3>
             <input
+                className={styles.input}
                 type="text"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
             />
-            <button onClick={saveNote}>Salva</button>
-            <button onClick={onClose}>Close</button>
+            <div className={styles.actions}>
+                <button className={styles.saveButton} onClick={saveNote}>Salva</button>
+                <button className={styles.closeButton} onClick={onClose}>Close</button>
+            </div>
+
         </dialog>
     )
 }
