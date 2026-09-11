@@ -1,8 +1,8 @@
 import { ListElement } from "./ListElement"
-import { useNotes } from "../hooks/useNotesList"
 import { NoteModal } from "./NoteModal"
 import { useState } from "react"
 import type { Note } from "../types/Note"
+import { useNotes } from "../hooks/notes/useNotes"
 
 export function List() {
     const { removeNote, editNote, notes } = useNotes()

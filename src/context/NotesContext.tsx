@@ -1,6 +1,6 @@
 import { createContext, type ReactNode } from "react";
 import type { Note } from "../types/Note";
-import { useNotesList } from "../hooks/useNotesList";
+import { useNotesState } from "../hooks/notes/useNotesState";
 
 export const NotesContext = createContext<NotesContextProps | null>(null)
 
@@ -12,7 +12,7 @@ export type NotesContextProps = {
 }
 
 export function NotesProvider({ children }: { children: ReactNode }) {
-    let notes = useNotesList()
+    let notes = useNotesState()
 
     return (
         <NotesContext value={notes}>

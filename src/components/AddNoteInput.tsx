@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNotes } from "../hooks/useNotesList"
+import { useNotes } from "../hooks/notes/useNotes"
 
 export function AddNoteInput() {
     const [newNoteText, setNewNoteText] = useState("")

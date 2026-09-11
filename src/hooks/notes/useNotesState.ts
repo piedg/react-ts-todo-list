@@ -1,8 +1,7 @@
-import { useState, useContext } from "react";
-import type { Note } from "../types/Note";
-import { NotesContext } from "../context/NotesContext";
+import { useState } from "react";
+import type { Note } from "../../types/Note";
 
-export function useNotesList() {
+export function useNotesState() {
     const [notes, setNotes] = useState<Note[]>([])
 
     function addNote(note: Note) {
@@ -21,8 +20,3 @@ export function useNotesList() {
     return { addNote, removeNote, editNote, notes }
 }
 
-export function useNotes() {
-    const context = useContext(NotesContext)
-    if (!context) throw new Error("useNotes must be used within NotesProvider")
-    return context
-}
