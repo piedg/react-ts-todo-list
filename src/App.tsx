@@ -3,6 +3,7 @@ import { AddNoteInput } from './components/AddNoteInput/AddNoteInput'
 import { List } from './components/List/List'
 
 import './App.css'
+import { SearchNoteInput } from './components/SearchNoteInput/SearchNoteInput'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <p>Made with React - Typescript</p>
         </div>
         <AddNoteInput />
+        <SearchNoteInput />
         <List />
       </section>
     </NotesProvider>

@@ -8,7 +8,10 @@ export type NotesContextProps = {
     addNote: (note: Note) => void,
     removeNote: (id: number) => void,
     editNote: (id: number, newText: string) => void,
-    notes: Note[]
+    notes: Note[],
+    notesByIncludeText: () => Note[],
+    searchNoteQuery: string,
+    setSearchNoteQuery: (query: string) => void
 }
 
 export function NotesProvider({ children }: { children: ReactNode }) {

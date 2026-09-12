@@ -6,7 +6,7 @@ import { useNotes } from "../../hooks/notes/useNotes"
 import styles from "./List.module.css"
 
 export function List() {
-    const { removeNote, editNote, notes } = useNotes()
+    const { removeNote, editNote, notesByIncludeText } = useNotes()
     const [editingNote, setEditingNote] = useState<Note | null>(null)
 
     return (
@@ -19,14 +19,15 @@ export function List() {
 
             <h2 className={styles.title}>Lista</h2>
             <ul className={styles.list}>
-                {notes.map((note) => (
-                    <ListElement
-                        key={note.id}
-                        note={note}
-                        onDeleteNote={removeNote}
-                        onEditNote={setEditingNote}
-                    />
-                ))}
+                {
+                    notesByIncludeText().map((note) => (
+                        <ListElement
+                            key={note.id}
+                            note={note}
+                            onDeleteNote={removeNote}
+                            onEditNote={setEditingNote}
+                        />
+                    ))}
             </ul>
         </>
     )
