@@ -1,18 +1,28 @@
 import { createContext, type ReactNode } from "react";
-import type { Note } from "../types/Note";
 import { useNotesState } from "../hooks/notes/useNotesState";
 
 export const NotesContext = createContext<NotesContextProps | null>(null)
 
-export type NotesContextProps = {
+/*
+import type { Note } from "../types/Note";
+import type { SortBy } from "../types/SortBy";
+
+type NotesContextProps = {
     addNote: (note: Note) => void,
     removeNote: (id: number) => void,
     editNote: (id: number, newText: string) => void,
     notes: Note[],
-    notesByIncludeText: () => Note[],
+    notesBySearch: () => Note[],
     searchNoteQuery: string,
-    setSearchNoteQuery: (query: string) => void
+    setSearchNoteQuery: (query: string) => void,
+    sortBy: SortBy,
+    setSortBy: (text: SortBy) => void,
+    sortedNotes: Note[]
 }
+USE EXPORT BELOW INSTEAD    
+*/
+
+export type NotesContextProps = ReturnType<typeof useNotesState>
 
 export function NotesProvider({ children }: { children: ReactNode }) {
     let notes = useNotesState()
