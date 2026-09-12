@@ -13,3 +13,8 @@
 .title {
     font-size: 2rem
 }
+
+.filters {
+    display: flex;
+    gap: 12px;
+}

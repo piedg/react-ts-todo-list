@@ -1,11 +1,16 @@
+import styles from './FilterButton.module.css'
+
 type FilterButtonProps = {
     title?: string,
     action?: () => void
-    color?: string
+    style?: "primary" | "secondary"
 }
 
-export function FilterButton({ title, action, color }: FilterButtonProps) {
+export function FilterButton({ title, action, style }: FilterButtonProps) {
+
+    const buttonClass = style === "primary" ? styles.buttonPrimary : styles.buttonSecondary
+
     return (
-        <button onClick={() => action?.()}>{title}</button>
+        <button className={buttonClass} onClick={() => action?.()}>{title}</button>
     )
 }
