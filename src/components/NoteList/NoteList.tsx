@@ -1,12 +1,12 @@
-import { ListElement } from "../ListElement/ListElement"
+import { NoteListElement } from "../NoteListElement/NoteListElement"
 import { EditNoteModal } from "../EditNoteModal/EditNoteModal"
 import { useState } from "react"
 import type { Note } from "../../types/Note"
 import { useNotes } from "../../hooks/notes/useNotes"
-import styles from "./List.module.css"
+import styles from "./NoteList.module.css"
 import { FilterButton } from "../FilterButton/FilterButton"
 
-export function List() {
+export function NoteList() {
     const { removeNote, editNote, toggleSort, sortedNotes } = useNotes()
     const [editingNote, setEditingNote] = useState<Note | null>(null)
 
@@ -26,11 +26,11 @@ export function List() {
             <ul className={styles.list}>
                 {
                     sortedNotes.map((note) => (
-                        <ListElement
+                        <NoteListElement
                             key={note.id}
                             note={note}
-                            onDeleteNote={removeNote}
                             onEditNote={setEditingNote}
+                            onDeleteNote={removeNote}
                         />
                     ))}
             </ul>

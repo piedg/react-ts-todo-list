@@ -1,6 +1,6 @@
 import { NotesProvider } from './context/NotesContext'
 import { AddNoteInput } from './components/AddNoteInput/AddNoteInput'
-import { List } from './components/List/List'
+import { NoteList } from './components/NoteList/NoteList'
 
 import './App.css'
 import { SearchNoteInput } from './components/SearchNoteInput/SearchNoteInput'
@@ -15,7 +15,7 @@ function App() {
         </div>
         <AddNoteInput />
         <SearchNoteInput />
-        <List />
+        <NoteList />
       </section>
     </NotesProvider>
   )

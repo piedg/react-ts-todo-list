@@ -1,5 +1,5 @@
 import type { Note } from "../../types/Note"
-import styles from "./ListElement.module.css"
+import styles from "./NoteListElement.module.css"
 
 type ListElementProps = {
     note: Note
@@ -7,7 +7,7 @@ type ListElementProps = {
     onEditNote: (note: Note) => void
 }
 
-export function ListElement({ note, onDeleteNote, onEditNote }: ListElementProps) {
+export function NoteListElement({ note, onDeleteNote, onEditNote }: ListElementProps) {
     return (
         <li className={styles.listElement}>
             <div className={styles.container}>
