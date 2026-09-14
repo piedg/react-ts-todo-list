@@ -7,7 +7,7 @@ import styles from "./NoteList.module.css"
 import { FilterButton } from "../FilterButton/FilterButton"
 
 export function NoteList() {
-    const { removeNote, editNote, toggleSort, sortedNotes } = useNotes()
+    const { removeNote, editNote, toggleSort, sortedNotes, completeNote } = useNotes()
     const [editingNote, setEditingNote] = useState<Note | null>(null)
 
     return (
@@ -31,6 +31,7 @@ export function NoteList() {
                             note={note}
                             onEditNote={setEditingNote}
                             onDeleteNote={removeNote}
+                            onCompleteNote={completeNote}
                         />
                     ))}
             </ul>

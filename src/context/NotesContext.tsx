@@ -4,6 +4,7 @@ import { useNotesState } from "../hooks/notes/useNotesState";
 export const NotesContext = createContext<NotesContextProps | null>(null)
 
 /*
+USE EXPORT BELOW INSTEAD    
 import type { Note } from "../types/Note";
 import type { SortBy } from "../types/SortBy";
 

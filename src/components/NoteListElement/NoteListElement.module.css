@@ -60,3 +60,9 @@
 .editButton:hover {
     background-color: #5f5fff;
 }
+
+input[type="checkbox"] {
+    accent-color: #5f5fff;
+    width: 20px;
+    height: 20px;
+}

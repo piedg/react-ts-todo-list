@@ -26,6 +26,10 @@ export function useNotesState() {
         setNotes((prev) => prev.map((note) => note.id === id ? { ...note, text: newText } : note))
     }
 
+    function completeNote(note: Note) {
+        note.isCompleted = !note.isCompleted
+    }
+
     function toggleSort(criteria: SortBy) {
         if (criteria === sortBy) {
             setSortDirection((prev) => prev === "asc" ? "desc" : "asc")
@@ -43,5 +47,18 @@ export function useNotesState() {
         return sortDirection === "asc" ? result : -result
     })
 
-    return { addNote, removeNote, editNote, notes, notesBySearch, searchNoteQuery, setSearchNoteQuery, sortedNotes, sortBy, setSortBy, toggleSort }
+    return {
+        addNote,
+        removeNote,
+        editNote,
+        notes,
+        notesBySearch,
+        searchNoteQuery,
+        setSearchNoteQuery,
+        sortedNotes,
+        sortBy,
+        setSortBy,
+        toggleSort,
+        completeNote
+    }
 }

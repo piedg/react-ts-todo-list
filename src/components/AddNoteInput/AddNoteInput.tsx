@@ -22,7 +22,7 @@ export function AddNoteInput() {
         const formattedHour: string = hours + ":" + minutes
         const formattedDateHour: string = formattedDate + ", " + formattedHour
 
-        addNote({ id: noteId, text: newNoteText, date: formattedDateHour })
+        addNote({ id: noteId, text: newNoteText, date: formattedDateHour, isCompleted: false })
         setNoteId(noteId + 1)
         setNewNoteText("")
     }

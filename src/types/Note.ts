@@ -1,5 +1,6 @@
 export type Note = {
     id: number,
     text: string,
-    date?: string
+    date?: string,
+    isCompleted: boolean
 }
